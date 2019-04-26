@@ -10,6 +10,7 @@ String birth = request.getParameter("birth");
 String email = request.getParameter("email");
 String id = request.getParameter("id");
 String pwd = request.getParameter("pwd");
+String studentNoStr = request.getParameter("student_no");
 
 HrdController controller = new HrdController();
 
@@ -19,15 +20,16 @@ student.setStudent_birth(birth);
 student.setStudent_addr(addr);
 student.setStudent_phone(phone);
 student.setStudent_email(email);
-student.setStudent_id(id);
-student.setStudent_pwd(pwd);
-
-int result = controller.insert(student);
-// out.print("result: " + result);
+try{
+	student.setStudent_no(Integer.parseInt(studentNoStr));
+}catch(NumberFormatException e){
+	e.printStackTrace();
+}
+int result = controller.update(student);
 if(result > 0){
-	out.print("입력 성공");
+	out.print("수정 성공");
 }else{
-	out.print("입력 실패");
+	out.print("수정 실패");
 }
 %>
 <br/>

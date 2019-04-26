@@ -43,13 +43,13 @@
 		<tr>
 			<td>아이디</td>
 			<td>
-				<input type="text" name="id" placeholder="아이디를 입력하세요"/>
+				<input type="text" name="id" placeholder="아이디를 입력하세요" required/>
 			</td>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
 			<td>
-				<input type="password" name="pwd" />
+				<input type="password" name="pwd" required/>
 			</td>
 		</tr>
 		</table>
